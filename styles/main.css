@@ -1,0 +1,362 @@
+/* Fontes do material de apoio */
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+:root {
+    --cor-fundo: #0f1115;
+    --cor-fundo-claro: #1a1d23;
+    --cor-texto: #e8e6e3;
+    --cor-texto-suave: #a9a7a3;
+    --cor-destaque: #c9a227;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+}
+
+body {
+    font-family: 'Avenir', Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+/* Mobile first: estilos base para telas pequenas */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-top: 10px;
+    background-color: var(--cor-destaque);
+}
+
+.title--center {
+    text-align: center;
+}
+
+.title--center::after {
+    margin: 10px auto 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #e0b93a;
+}
+
+/* Cabeçalho */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(15, 17, 21, 0.92);
+    border-bottom: 1px solid #2a2d33;
+}
+
+.header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.header__logo {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.header__logo span {
+    color: var(--cor-destaque);
+}
+
+.header__nav {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.header__nav a {
+    text-decoration: none;
+    color: var(--cor-texto-suave);
+}
+
+.header__nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 60px;
+    background: linear-gradient(rgba(15, 17, 21, 0.55), rgba(15, 17, 21, 0.95)), url('../images/hero.jpg') center / cover no-repeat;
+}
+
+.hero__tag {
+    color: var(--cor-destaque);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero__title {
+    font-size: 40px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 8px 0 16px;
+}
+
+.hero__text {
+    max-width: 560px;
+    color: var(--cor-texto-suave);
+    margin-bottom: 20px;
+}
+
+.hero__info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.hero__info span {
+    padding: 4px 12px;
+    border: 1px solid var(--cor-texto-suave);
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Sobre */
+.sobre,
+.elenco,
+.premios,
+.destaque,
+.faq {
+    padding: 60px 0;
+}
+
+.sobre__content,
+.destaque__content {
+    display: grid;
+    gap: 32px;
+}
+
+.sobre__imagem,
+.destaque__imagem {
+    border-radius: 8px;
+}
+
+.sobre p,
+.destaque p {
+    color: var(--cor-texto-suave);
+    margin-bottom: 16px;
+}
+
+.sobre__fichas li {
+    padding: 8px 0;
+    border-bottom: 1px solid #2a2d33;
+}
+
+/* Elenco */
+.elenco {
+    background-color: var(--cor-fundo-claro);
+}
+
+.elenco__lista {
+    display: grid;
+    gap: 32px;
+}
+
+.pessoa {
+    text-align: center;
+}
+
+.pessoa__foto {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--cor-destaque);
+}
+
+.pessoa__nome {
+    font-size: 20px;
+}
+
+.pessoa__papel {
+    color: var(--cor-texto-suave);
+}
+
+/* Prêmios */
+.premios__lista {
+    display: grid;
+    gap: 20px;
+}
+
+.numero {
+    padding: 28px 20px;
+    text-align: center;
+    background-color: var(--cor-fundo-claro);
+    border-top: 3px solid var(--cor-destaque);
+    border-radius: 6px;
+}
+
+.numero__valor {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cor-destaque);
+}
+
+.numero__texto {
+    color: var(--cor-texto-suave);
+}
+
+/* FAQ */
+.faq {
+    background-color: var(--cor-fundo-claro);
+}
+
+.faq__item {
+    max-width: 760px;
+    margin: 0 auto 12px;
+    padding: 16px 20px;
+    background-color: var(--cor-fundo);
+    border-radius: 6px;
+}
+
+.faq__item summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.faq__item p {
+    margin-top: 12px;
+    color: var(--cor-texto-suave);
+}
+
+/* Rodapé */
+.footer {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--cor-texto-suave);
+    border-top: 1px solid #2a2d33;
+}
+
+.footer__aviso {
+    margin-bottom: 8px;
+}
+
+/* Tablet: a partir de 768px */
+@media (min-width: 768px) {
+    .header__content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header__nav {
+        gap: 24px;
+        font-size: 15px;
+    }
+
+    .hero__title {
+        font-size: 56px;
+    }
+
+    .elenco__lista,
+    .premios__lista {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .title {
+        font-size: 30px;
+    }
+}
+
+/* Desktop: a partir de 1024px */
+@media (min-width: 1024px) {
+    .hero__title {
+        font-size: 72px;
+    }
+
+    .sobre__content,
+    .destaque__content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 56px;
+    }
+
+    .sobre,
+    .elenco,
+    .premios,
+    .destaque,
+    .faq {
+        padding: 90px 0;
+    }
+}
